@@ -10,7 +10,7 @@ const HOSTED_ZONE = "enter-the-id-for-your-hosted-route53-zone";
 const DOMAIN      = "www.yourdomain.com";        // enter your domain name
 const TTL         = 30;
 
-/*** CONFIGURE EMAIL (OPTIONAL) ***/
+/*** CONFIGURE EMAIL (OPTIONAL) ***/ 
 const SMTP_SERVER    = "hostname-of-smtp-server";
 const SMTP_PORT      = 465;   // port of smtp server to be used
 const SMTP_USER      = "smtp-user-which-sends-email";

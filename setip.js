@@ -79,17 +79,20 @@ function setTo (ip) {
     LOG.info ("asking Route53 to change record set to: " + JSON.stringify (params));
     LOG.info ("Route53 replied:  \n", "  Error: " + JSON.stringify(err) + "\n  Data: " + JSON.stringify(data) );
     if (!err) {  // if there was no error, check and log the propagation status throughtou the DNS system
+      LOG.info ("will now schedule checks");
       setTimeout ( ()=>checkChange (data.ChangeInfo.Id,   5000) ,   5000);    // after 5 seconds
       setTimeout ( ()=>checkChange (data.ChangeInfo.Id,  10000) ,  10000);    // after 10 seconds
       setTimeout ( ()=>checkChange (data.ChangeInfo.Id,  60000) ,  60000);    // after 1 minute
       setTimeout ( ()=>checkChange (data.ChangeInfo.Id, 120000) , 120000);    // after 2 minutes
+      LOG.info ("Scheduled checks");
     }
     sendMail ("set to ip", JSON.stringify(err) + "\n" + JSON.stringify(data));  
   });   
 }
   
  
-function checkChange (Id, atDelay) {  
+function checkChange (Id, atDelay) { 
+  LOG.info ("Will now check back with Route53");
   route53.getChange( {Id:Id}, function(err, data) {
     LOG.info ("Checked back with Route53 after " + atDelay + "[ms] for" + Id + " and received " + JSON.stringify (data) + " and error=" + JSON.stringify (err));    
   });
