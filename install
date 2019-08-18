@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# pull in fresh version
+git pull https://github.com/clecap/mydyn.git
+
 # make installation directory
 mkdir -p /usr/local/mydyn
 chmod 755 /usr/local/mydyn
