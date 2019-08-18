@@ -22,7 +22,7 @@ cd /usr/local/mydyn
 npm install
 
 # install connection with systemd startup
-cp    mydyn.service /etc/systemd/system
+cp    mydyn.service /etc/systemd/system 
 chmod 644 /etc/systemd/system/mydyn.service
 
 cp mydyn-shell /usr/local/mydyn
