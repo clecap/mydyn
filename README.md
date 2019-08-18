@@ -62,8 +62,8 @@ Requirements: A local installation of node.js and npm.
 
 ```
   cd tmp
-  wget ...
-  unzip ...
+  git clone https://github.com/clecap/mydyn.git
+  cd mydyn
   sudo install
 ``` 
 

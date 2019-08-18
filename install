@@ -3,7 +3,7 @@
 # make installation directory
 mkdir -p /usr/local/mydyn
 chmod 755 /usr/local/mydyn
-
+ 
 # copy files
 cp mydyn-shell conf.js mydyn.service package.json setip.js /usr/local/mydyn
 chmod 555 /usr/local/mydyn-shell
