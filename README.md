@@ -58,19 +58,16 @@ Requirements: A local installation of node.js and npm.
 
 1. Download this repository into /tmp
 1. Install the software
-
+1. Configure the system by editing /etc/mydyn/conf.js
 
 ```
   cd tmp
   git clone https://github.com/clecap/mydyn.git
   cd mydyn
   sudo install
+  sudo vi /etc/mydyn/conf.js
 ``` 
 
-1. unzip
-1. cd /tmp
-1. Edit SAMPLE.js and rename into conf.js
-1. sudo /tmp/install
 
 ### Use it as a Web Service
 

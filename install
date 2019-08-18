@@ -6,15 +6,15 @@ chmod 755 /usr/local/mydyn
  
 # copy files
 cp mydyn-shell conf.js mydyn.service package.json setip.js /usr/local/mydyn
-chmod 555 /usr/local/mydyn-shell
-chmod 644 /usr/local/conf.js
-chmod 644 /usr/local/mydyn.service
-chmod 644 /usr/local/package.json
+chmod 555 /usr/local/mydyn/mydyn-shell
+chmod 644 /usr/local/mdydyn/conf.js
+chmod 644 /usr/local/mydyn/mydyn.service
+chmod 644 /usr/local/mydyn/package.json
 chmod 644 /usr/local/mydyn/setip.js
 
 # configure configuration file
 mkdir -p /etc/mydyn
-cp -n conf.js /etc/mydyn/conf.j
+cp -n conf.js /etc/mydyn/conf.js
 chmod 644 /etc/mydyn/conf.js
 
 # install required node modules
