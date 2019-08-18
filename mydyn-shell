@@ -1,0 +1,14 @@
+#!/bin/sh
+
+
+start() {
+  exec /usr/bin/node /usr/local/mydyn/setip.js
+}
+
+stop() { 
+  exit 0
+}
+
+case $1 in
+  start|stop) "$1" ;;
+esac

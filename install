@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# make installation directory
+mkdir -p /usr/local/mydyn
+chmod 755 /usr/local/mydyn
+
+# copy files
+cp mydyn-shell conf.js mydyn.service package.json setip.js /usr/local/mydyn
+chmod 555 /usr/local/mydyn-shell
+chmod 644 /usr/local/conf.js
+chmod 644 /usr/local/mydyn.service
+chmod 644 /usr/local/package.json
+chmod 644 /usr/local/mydyn/setip.js
+
+# configure configuration file
+mkdir -p /etc/mydyn
+cp -n conf.js /etc/mydyn/conf.j
+chmod 644 /etc/mydyn/conf.js
+
+# install required node modules
+cd /usr/local/mydyn
+npm install
+
+# install connection with systemd startup
+cp    mydyn.service /etc/systemd/system
+chmod 644 /etc/systemd/system/mydyn.service
+
+cp mydyn-shell /usr/local/mydyn
+chmod 755 /usr/local/mydyn/mydyn-shell
+
+rm /var/log/mydyn.log
+touch /var/log/mydyn.log
+chown www-data /var/log/mydyn.log
+chgrp www-data /var/log/mydyn.log
+
+systemctl enable mydyn.service
+systemctl daemon-reload

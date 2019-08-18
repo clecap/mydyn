@@ -1,0 +1,13 @@
+[Unit]
+Description= mydyn dynamic dns service
+
+[Service]
+Type=simple
+WorkingDirectory=/usr/local/mydyn
+ExecStart=/usr/local/mydyn/mydyn-shell start &
+ExecStop=/usr/local/mydyn/mydyn-shell stop
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target
