@@ -23,10 +23,9 @@ const PORT           = 8080;  // port under which express server is run
 const HOST          = "localhost";   // or IP address
 
 // implement some methods for getting current IP address
-const fetch      = require ('node-fetch');
-function getCurrentIP_mi () { return fetch('https://api.myip.com').then(res => res.json().then ( js => js.ip ) ) }
+function getCurrentIP_mi (fetcher) { return fetcher ('https://api.myip.com').then(res => res.json().then ( js => js.ip ) ) }
 
-// function getCurrentIP_he () { return fetch('https://SOMEDOMAINNAME/getip.php', {headers: {"X-Pragma-Header": "Some-header-value"} } ).then(res => res.text().then ( js => js ) ) }
+// function getCurrentIP_he (fetcher) { return fetcher('https://SOMEDOMAINNAME/getip.php', {headers: {"X-Pragma-Header": "Some-header-value"} } ).then(res => res.text().then ( js => js ) ) }
 
 // select a method
 const GET_IP = getCurrentIP_mi;   

@@ -47,7 +47,7 @@ function listHostedZones () {
 
 
 function setIPNow () {
-  C.GET_IP().then ( ip => { 
+  getCurrentIP(fetch).then ( ip => { 
     LOG.info ("Found current IP: " + ip);
     setTo (ip); 
   });
