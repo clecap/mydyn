@@ -1,6 +1,6 @@
 
 
-const C = require ("/etc/mydyn/conf.js");     // load configuration - MAKE ADJUSTMENTS, see README.md
+
 
 
 /** IMPORT required functionality **/
@@ -11,7 +11,7 @@ const express    = require ('express');
 const nodemailer = require ('nodemailer');
 const log4js     = require('log4js');
 
-
+const C = require ("/etc/mydyn/conf.js");     // load configuration - MAKE ADJUSTMENTS, see README.md
 
 /** LOGGING is done using the function  LOG.info (<string>)
  *  Calling logToFile has us log to /var/log/mydyn.log, else we log to console
