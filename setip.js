@@ -51,7 +51,7 @@ function setIPNow () {
     LOG.info ("setIPNow: Found current IP: " + ip);
     setTo (ip); 
   }).catch(err => {
-      LOG.error("setIPNow: Failed to get current IP:", err);
+      LOG.error("****** setIPNow: Failed to get current IP:", err);
     });;
 }
 
@@ -86,7 +86,8 @@ function setTo (ip) {
       setTimeout ( ()=>checkChange (data.ChangeInfo.Id,  10000) ,  10000);    // after 10 seconds
       setTimeout ( ()=>checkChange (data.ChangeInfo.Id,  60000) ,  60000);    // after 1 minute
       setTimeout ( ()=>checkChange (data.ChangeInfo.Id, 120000) , 120000);    // after 2 minutes
-      LOG.info ("Scheduled checks");
+      LOG.info ("COMPLETED all Scheduled checks");
+      LOG.info ("");
     }
     sendMail ("set to ip", JSON.stringify(err) + "\n" + JSON.stringify(data));  
   });   
