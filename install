@@ -38,3 +38,5 @@ chgrp www-data /var/log/mydyn.log
 
 systemctl enable mydyn.service
 systemctl daemon-reload
+systemctl stop mydyn
+systemctl start mydyn
