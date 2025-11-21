@@ -71,7 +71,6 @@ Requirements: A local installation of node.js and npm.
 
 ### Use it as a Web Service
 
-
 ### Use it as self-controlled Cron Job
 
 
@@ -83,6 +82,13 @@ Requirements: A local installation of node.js and npm.
   node setip.js manual
 ``` 
 
+### Use it as a Service
+
+```
+  systemctl start mydyn
+  systemctl status mydyn
+  systemctl stop mydyn
+```
 
 
 ## Security Aspects

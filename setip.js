@@ -48,9 +48,11 @@ function listHostedZones () {
 
 function setIPNow () {
   getCurrentIP(fetch).then ( ip => { 
-    LOG.info ("Found current IP: " + ip);
+    LOG.info ("setIPNow: Found current IP: " + ip);
     setTo (ip); 
-  });
+  }).catch(err => {
+      LOG.error("setIPNow: Failed to get current IP:", err);
+    });;
 }
 
 
@@ -137,6 +139,7 @@ function setupServer () {
   app.get('/mydyn/set-ip', (req, res) => {
     LOG.info ("server was called at /mydyn/set-ip");
     setIPNow();
+    LOG.info ("/mydyn/set-ip is after setIPNow");
     res.send('Did set IP'); 
   });
 
