@@ -151,6 +151,7 @@ function setupCron () { setInterval ( setIPNowIfDifferent, 10000); }
 
 
 function init () {
+  LOG.info ("Service mydyn initialzed");
   // LOG.info ("Called with arguments: " + JSON.stringify(process.argv) );
   if (process.argv.length == 2)      {logToFile ();  setupServer (); }             // no arguments given:   log to file and start server  used in service definition of systemd
   else if (process.argv.length == 3) {
