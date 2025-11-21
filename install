@@ -8,7 +8,7 @@ mkdir -p /usr/local/mydyn
 chmod 755 /usr/local/mydyn
  
 # copy files
-cp mydyn-shell conf.js mydyn.service package.json setip.js /usr/local/mydyn
+cp mydyn-shell conf.js mydyn.service package.json setip.js VERSION* install /usr/local/mydyn
 chmod 555 /usr/local/mydyn/mydyn-shell
 chmod 644 /usr/local/mydyn/conf.js
 chmod 644 /usr/local/mydyn/mydyn.service
